@@ -1,0 +1,192 @@
+/* シマーアニメーション定義 */
+@property --shimmer {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 33deg;
+}
+
+@keyframes shimmer {
+  0% {
+    --shimmer: 0deg;
+  }
+  100% {
+    --shimmer: 360deg;
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shineLoop {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes text {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: -100% center;
+  }
+}
+
+@keyframes textLoop {
+  0% {
+    background-position: 100% center;
+  }
+  66% {
+    background-position: -100% center;
+  }
+  100% {
+    background-position: -100% center;
+  }
+}
+
+@keyframes scaleLoop {
+  0% {
+    scale: 1;
+  }
+  15% {
+    scale: 1.2;
+  }
+  85% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/* ボタンスタイル */
+.shimmer-button {
+  background-image: linear-gradient(
+    341deg,
+    #ff750f -10%,
+    #ff750f 50%,
+    #ff750f 110%
+  );
+  /* ボタン色を変えたい場合はここを変更してください */
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    rgba(77, 26, 58, 0.5) 0px 4px 8px -2px,
+    transparent 0px 0px 0px inset;
+  scale: 1;
+  transition: none;
+  animation: 3s
+    linear(
+      0 0%,
+      0.002 0.45%,
+      0.01 0.9%,
+      0.038 1.8%,
+      0.156 3.8%,
+      0.312 5.8%,
+      0.789 11.1%,
+      1.015 14.2%,
+      1.096 15.725%,
+      1.157 17.25%,
+      1.199 18.775%,
+      1.224 20.3%,
+      1.231 21.375%,
+      1.231 22.45%,
+      1.226 23.525%,
+      1.214 24.6%,
+      1.176 26.9%,
+      1.057 32.6%,
+      1.007 35.5%,
+      0.984 37.125%,
+      0.968 38.75%,
+      0.956 40.375%,
+      0.949 42%,
+      0.946 44.1%,
+      0.95 46.5%,
+      0.998 57.2%,
+      1.007 60.25%,
+      1.011 63.3%,
+      1.012 68.3%,
+      0.998 84%,
+      1 100%
+    )
+    0s infinite normal none running scaleLoop;
+  line-height: 1em;
+}
+
+/* シマー背景 */
+.shimmer {
+  position: absolute;
+  inset: calc(-40px);
+  border-radius: inherit;
+  pointer-events: none;
+  mask-image: conic-gradient(
+    from var(--shimmer, 0deg),
+    transparent 0%,
+    transparent 20%,
+    black 36%,
+    black 45%,
+    transparent 50%,
+    transparent 70%,
+    black 85%,
+    black 95%,
+    transparent 100%
+  );
+  mask-size: cover;
+  mix-blend-mode: plus-lighter;
+  animation: 1s linear 0s infinite normal both running shimmer;
+}
+
+/* シマー内の光の効果 */
+.shimmer > div {
+  transition: none;
+  opacity: 1;
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  mix-blend-mode: color;
+  inset: 40px;
+  pointer-events: none;
+}
+
+.shimmer > div:first-child {
+  box-shadow:
+    rgb(245, 243, 240) 0px 0px calc(4px) 2px,
+    rgb(214, 205, 194) 0px 0px calc(7.2px) 4px,
+    rgb(217, 183, 140) 0px 0px calc(13.2px) 4px,
+    rgb(255, 187, 102) 0px 0px calc(26.4px) 5px;
+  z-index: -1;
+  animation: 3s ease-in 0s infinite normal none running shineLoop;
+}
+
+.shimmer > div:last-child {
+  box-shadow:
+    rgb(251, 243, 233) 0px 0px 0px 1px inset,
+    rgb(255, 210, 153) 0px 0px 2px 1px inset,
+    rgb(255, 187, 102) 0px 0px 5px 2px inset;
+  z-index: 2;
+  animation: 3s ease-in 0s infinite normal none running shineLoop;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shimmer Button</title>
+    <!-- 仮でfont awesomeのカレンダーアイコン使用しています -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body>
+    <section class="bg-blue-300 w-full min-h-screen">
+      <div class="bg-red-400 w-full h-100">
+        <p>サンプルのテキスト。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+      </div>
+      <div class="flex w-full h-100 justify-center items-center">
+        <!-- ↓リンクやテキストは適宜差し替えてください -->
+        <!-- ↓aタグにw-fullを与えると、大きくなるアニメーション（1.2倍大きくなります）のときに画面に収まらなくなるので、w-[80%]にしてます -->
+        <a
+          href="https://ssagent.jp/"
+          class="shimmer-button w-[80%] text-white font-semibold px-10 text-base leading-none lg:px-20 py-5 rounded-full cursor-pointer no-underline flex items-center justify-center border border-white/25 tracking-tight"
+        >
+          <div class="shimmer">
+            <div></div>
+            <div></div>
+          </div>
+          <span class="text">無料カウンセリング予約</span>
+          <!-- ↓ここは正規のカレンダーアイコンに変更してください -->
+          <i class="fa-solid fa-calendar ml-3"></i>
+        </a>
+      </div>
+      <div class="bg-red-400 w-full h-100">
+        <p>サンプルのテキスト。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+      </div>
+    </section>
+  </body>
+</html>
