@@ -174,10 +174,10 @@
 
 .shimmer > div:first-child {
   box-shadow:
-    rgb(245, 243, 240) 0px 0px calc(4px) 2px,
-    rgb(214, 205, 194) 0px 0px calc(7.2px) 4px,
-    rgb(217, 183, 140) 0px 0px calc(13.2px) 4px,
-    rgb(255, 187, 102) 0px 0px calc(26.4px) 5px;
+    rgb(245, 243, 240) 0px 0px calc(6px) 3px,
+    rgb(214, 205, 194) 0px 0px calc(10.8px) 6px,
+    rgb(217, 183, 140) 0px 0px calc(19.8px) 6px,
+    rgb(255, 187, 102) 0px 0px calc(39.6px) 7.5px;
   z-index: -1;
   animation: 3s ease-in 0s infinite normal none running shineLoop;
 }
